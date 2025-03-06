@@ -1,0 +1,14 @@
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">contact</a>
+    <a href="/category">Category</a>
+    {% if  "/login/"  == request.path %}
+
+    <a href="/register">Register</a>
+
+    {% else %}
+    <a href="/login">Login</a>
+    {% endif %}
+
+</nav>

@@ -1,0 +1,22 @@
+{% extends "layouts/main.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+{% for product in products %}
+    <div class="product">
+        <img src="{{ product.image }}" alt="">
+        <div class="product-info">
+            <div>
+                <p>{{ product.name }}</p>
+                <p>{{ product.description }}</p>
+            </div>
+            <div class="product-price">
+                <p>{{ product.price }}</p>
+                <p>{{ product.get_discount_price }}</p>
+                <a href="{{ }}" >add to cart</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock content %}

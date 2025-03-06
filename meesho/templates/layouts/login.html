@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+    {% block meta %}
+    {% endblock meta%}
+    {% block stylesheets %}
+    {% endblock stylesheets %}
+    {% block javascripts %}
+    {% endblock javascripts %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border:none;
+            font-family:poppins;
+            text-decoration: none;
+            outline: none;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        nav > a{
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+            border-radius: 10px;
+            transition: all 0.7s;
+            &:hover{
+                color: black;
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meesho</h1>
+        {% include "components/nav.html" %}
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

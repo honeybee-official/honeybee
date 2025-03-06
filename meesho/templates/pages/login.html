@@ -1,0 +1,57 @@
+{% extends "layouts/login.html" %}
+
+{% block title %}Register{% endblock title %}
+{% block stylesheets %}
+<style>
+    input{
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 50px;
+        border: 1px solid #007bff;
+        outline:none;
+    }
+    button,.reg{
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 50px;
+        transition: all 0.7s;
+        font-weight: bold;
+        font-size: 1.2rem;
+        &:hover{
+            background-color: #000;
+            color: white;
+        }
+    }
+        .reg{
+            text-align: center;
+            background-color: white;
+            border: 1px solid #007bff;
+            color: #007bff;
+            &:hover{
+                background-color: #007bff;
+                color: white;
+        }
+    }
+</style>
+{% endblock stylesheets %}
+{% block content %}
+<main style="display: flex;justify-content: center;align-items: center;height: 100vh;flex-direction: column;"> 
+    <h1>Register</h1>
+    <form method="post" style="width: 50%;display: flex;flex-direction: column;">
+        {% csrf_token %}
+        {% for item in form %}
+        {{ item.label_tag }}
+        {{ item }}
+        {% endfor %}
+        <button type="submit" >Login</button>
+        {% comment %} <a class="reg" href="/register">Register</a> {% endcomment %}
+    </form>
+</main>
+{% endblock content %}
+
