@@ -11,7 +11,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
+# akalya
 class Brand(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
